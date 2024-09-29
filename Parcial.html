@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente P2P</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #output { margin-top: 10px; border: 1px solid #ddd; padding: 10px; max-height: 300px; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+    <h1>Cliente P2P</h1>
+    <input type="text" id="mensaje" placeholder="Introduce tu mensaje">
+    <button onclick="enviarMensaje()">Enviar</button>
+    <button onclick="enviarATodos()">Enviar a Todos</button>
+
+    <div id="output"></div>
+
+    <script>
+        // Simulación de enviar mensajes al servidor (usa websockets o AJAX en una implementación real)
+        function enviarMensaje() {
+            const mensaje = document.getElementById('mensaje').value;
+            const output = document.getElementById('output');
+            output.innerHTML += `<p>Mensaje enviado: ${mensaje}</p>`;
+            document.getElementById('mensaje').value = '';
+
+            // Aquí podrías realizar una solicitud al servidor via WebSocket o AJAX
+        }
+
+        function enviarATodos() {
+            const output = document.getElementById('output');
+            output.innerHTML += `<p>Mensaje enviado a todos los nodos</p>`;
+            // Aquí podrías realizar una solicitud al servidor para enviar un mensaje a todos
+        }
+    </script>
+</body>
+</html>
